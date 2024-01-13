@@ -1,0 +1,57 @@
+// ticketing.proto
+syntax = "proto3";
+
+option go_package = "./proto"; // Include version in package
+
+package ticketing; // Add version to package name
+
+service TicketService {
+  rpc PurchaseTicket (TicketRequest) returns (Receipt) {} // Error handling to be implemented
+  rpc GetReceiptDetails (User) returns (Receipt) {} // Error handling to be implemented
+  rpc ViewUsersAndSeats (Section) returns (UserSeatList) {} // Error handling to be implemented
+  rpc RemoveUser (User) returns (Empty) {} // Error handling to be implemented
+  rpc ModifyUserSeat (UserSeatModification) returns (Empty) {} // Error handling to be implemented
+}
+
+message TicketRequest {
+  string from = 1;
+  string to = 2;
+  string section = 3; // Added field for section preference
+  string first_name = 4;
+  string last_name = 5;
+  string email = 6;
+}
+
+message Receipt {
+  string from = 1;
+  string to = 2;
+  string user = 3;
+  float price_paid = 4;
+  string seat = 5; // Seat to be allocated during purchase
+}
+
+message User {
+  string first_name = 1;
+  string last_name = 2;
+  string email = 3;
+}
+
+message Section {
+  string section = 1;
+}
+
+message UserSeatList {
+  repeated UserSeat user_seat = 1;
+}
+
+message UserSeat {
+  string user = 1;
+  string seat = 2;
+}
+
+message Empty {}
+
+message UserSeatModification {
+  string user = 1;
+  string new_seat = 2;
+}
