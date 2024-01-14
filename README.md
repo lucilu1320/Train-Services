@@ -72,7 +72,11 @@
     </li>
     <li>Navigate to the project directory:
       <code>cd Train-Services</code>
-    </li>
+      
+   </li>
+   <li>Run the command to install the modules:
+     <code>go mod tidy</code>
+   </li>
     <li>Open two terminals:
       <ul>
         <li>In terminal 1, navigate to the client directory:
