@@ -1,22 +1,22 @@
-// ticketing.proto
 syntax = "proto3";
 
-option go_package = "./proto"; // Include version in package
+option go_package = "./proto"; //Adjust the path as needed
 
-package ticketing; // Add version to package name
+package ticketing.v1;
 
+//Ticket Service defines the gRPC service for ticketing operations.
 service TicketService {
-  rpc PurchaseTicket (TicketRequest) returns (Receipt) {} // Error handling to be implemented
-  rpc GetReceiptDetails (User) returns (Receipt) {} // Error handling to be implemented
-  rpc ViewUsersAndSeats (Section) returns (UserSeatList) {} // Error handling to be implemented
-  rpc RemoveUser (User) returns (Empty) {} // Error handling to be implemented
-  rpc ModifyUserSeat (UserSeatModification) returns (Empty) {} // Error handling to be implemented
+  rpc PurchaseTicket (TicketRequest) returns (Receipt) {}
+  rpc GetReceiptDetails (User) returns (Receipt) {}
+  rpc ViewUsersAndSeats (Section) returns (UserSeatList) {}
+  rpc RemoveUser (User) returns (Empty) {}
+  rpc ModifyUserSeat (UserSeatModification) returns (Empty) {}
 }
 
 message TicketRequest {
   string from = 1;
   string to = 2;
-  string section = 3; // Added field for section preference
+  string section = 3;
   string first_name = 4;
   string last_name = 5;
   string email = 6;
@@ -25,9 +25,10 @@ message TicketRequest {
 message Receipt {
   string from = 1;
   string to = 2;
-  string user = 3;
-  float price_paid = 4;
-  string seat = 5; // Seat to be allocated during purchase
+  string user = 3; 
+  float price_paid = 4; //Consider using an integer for currency
+  string seat = 5;
+  string section = 6;
 }
 
 message User {
@@ -45,13 +46,13 @@ message UserSeatList {
 }
 
 message UserSeat {
-  string user = 1;
+  string user = 1; 
   string seat = 2;
 }
 
 message Empty {}
 
 message UserSeatModification {
-  string user = 1;
+  string email = 1; 
   string new_seat = 2;
 }
