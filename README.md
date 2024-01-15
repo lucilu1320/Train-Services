@@ -53,7 +53,7 @@
 <code> echo 'eval "</span>(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile </code>
       <code>source ~/.zprofile </code>
     </li>
-<li> Check the URL below for installation of Protocol Buffer now using brew: https://grpc.io/docs/languages/go/quickstart/</li>
+<li> Check the URL below for installation of Protocol Buffer now using brew: https://grpc.io/docs/protoc-installation/</li>
   </ol>
 
 <h4>Choco Installation for windows:</h4>
