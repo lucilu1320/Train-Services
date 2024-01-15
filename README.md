@@ -31,7 +31,7 @@
      Now, if Protocol Buffer isn't installed you can go for the steps below:</h3>
 
   <ul>
-    <li>For Protocol Buffer installed go for the installation from the link/reference given:(both for linux and MacOS): https://grpc.io/docs/languages/go/quickstart/</li>
+    <li>For Protocol Buffer installed go for the installation from the link/reference given:(both for linux and MacOS): https://grpc.io/docs/protoc-installation/</li>
     <li>Please note that in case of MacOS, Homebrew must be installed on your Mac system.</li>
   </ul>
 
