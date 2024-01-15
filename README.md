@@ -32,7 +32,7 @@
 
   <ul>
     <li>For Protocol Buffer installed go for the installation from the link/reference given:(both for linux and MacOS): https://grpc.io/docs/languages/go/quickstart/</li>
-    <li>Please note that in case of MacOs, Homebrew must be installed on your Mac system.</li>
+    <li>Please note that in case of MacOS, Homebrew must be installed on your Mac system.</li>
   </ul>
 
   <h4>To install Homebrew:(if needed)</h4>
